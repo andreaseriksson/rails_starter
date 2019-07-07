@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
-    <title>RailsStarter</title>
+    <title>Rails Starter - Saascasts.io template</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,33 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <nav class="navbar navbar-expand-md shadow navbar-light fixed-top bg-light">
+        <%= link_to 'Rails Starter', root_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to 'Home', root_path, class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main" class="flex-shrink-0 mt-5">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-dark">
+      <div class="container text-center">
+        <small class="text-muted"><%= Time.current.year %></small>
+      </div>
+    </footer>
   </body>
 </html>
